@@ -10,6 +10,6 @@ node{
      stage('Scan') {
         withSonarQubeEnv('sq1') {
                 sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins-codeReport -Dsonar.organization=jenkins-290 -Dsonar.host.url=https://sonarcloud.io"
-  }
+        }
 }
 }
