@@ -21,7 +21,7 @@ node{
     ]]
 )      
         sh "git config --global user.name '$GIT_USER'"
-        sh "git config --global user.email '$GIT_EMAIL' "[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/lib/jenkins/workspace/scripted-maven-pipeline). Please verify you invoked Maven from the correct directory. -> [Help 1]
+        sh "git config --global user.email '$GIT_EMAIL' 
         sh 'git checkout artifacts'
         sh 'cp target/my-app-1.0-SNAPSHOT.jar .'
         sh 'git add my-app-1.0-SNAPSHOT.jar'
