@@ -21,7 +21,7 @@ node{
     ]]
 )      
         sh "git config --global user.name '$GIT_USER'"
-        sh "git config --global user.email '$GIT_EMAIL' 
+        sh "git config --global user.email '$GIT_EMAIL' "
         sh 'git checkout artifacts'
         sh 'cp target/my-app-1.0-SNAPSHOT.jar .'
         sh 'git add my-app-1.0-SNAPSHOT.jar'
