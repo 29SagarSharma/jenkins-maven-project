@@ -16,5 +16,17 @@ node{
                 sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins-codeReport -Dsonar.organization=jenkins-290 -Dsonar.host.url=https://sonarcloud.io"
         }
 }
+     stage('Deploy'){
+    checkout scmGit(branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/29SagarSharma/Archive-Repo.git', credentialsId: 'maven-githukey'
+    ]]
+)      
+        sh "git config --global user.name '$GIT_USER'"
+        sh "git config --global user.email '$GIT_EMAIL' "[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/lib/jenkins/workspace/scripted-maven-pipeline). Please verify you invoked Maven from the correct directory. -> [Help 1]
+        sh 'git checkout artifacts'
+        sh 'cp target/my-app-1.0-SNAPSHOT.jar .'
+        sh 'git add my-app-1.0-SNAPSHOT.jar'
+        sh 'git commit -m "Add .jar file"'
+        sh 'git push https://$GIT_USER:$GIT_PASS@github.com/29SagarSharma/Archive-Repo.git artifacts'
+    }
      
 }
