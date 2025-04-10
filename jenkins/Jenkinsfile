@@ -11,12 +11,12 @@ node{
     stage('Test'){
         sh "${mvnHome}/bin/mvn test"
     }
-     stage('Scan') {
+    stage('Scan') {
         withSonarQubeEnv('sq1') {
                 sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins-codeReport -Dsonar.organization=jenkins-290 -Dsonar.host.url=https://sonarcloud.io"
         }
 }
-     stage('Deploy'){
+    stage('Deploy'){
     checkout scmGit(branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/29SagarSharma/Archive-Repo.git', credentialsId: 'maven-githukey'
     ]]
 )      
