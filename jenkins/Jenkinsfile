@@ -32,6 +32,9 @@ node{
         sh "git commit -m 'Add .jar file'"
         sh "git push https://$GIT_USER:$GIT_PASS@github.com/29SagarSharma/Archive-Repo.git artifacts"
     }
+    stage('Clean workspace'){
+        sh 'rm -rf /var/lib/jenkins/workspace/scripted-maven-pipeline/*'
+     }
     
      
 
