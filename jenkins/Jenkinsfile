@@ -1,5 +1,9 @@
 node{
     def mvnHome = tool 'jenkins-maven'
+
+     stage('Clean workspace'){
+        sh 'rm -rf /var/lib/jenkins/workspace/scripted-maven-pipeline/*'
+    }
     
    
     stage('Checkout'){
