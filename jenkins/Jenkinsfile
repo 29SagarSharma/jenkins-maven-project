@@ -1,5 +1,8 @@
 node{
     def mvnHome = tool 'jenkins-maven'
+    stage('clean workspace'){
+    sh 'rm -rf /var/lib/jenkins/workspace/scripted-maven-pipeline'
+}
    
     stage('Checkout'){
         checkout scmGit(branches: [[name: '**']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/29SagarSharma/jenkins-maven-project.git']])
@@ -28,6 +31,5 @@ node{
         sh "git commit -m 'Add .jar file'"
         sh "git push https://$GIT_USER:$GIT_PASS@github.com/29SagarSharma/Archive-Repo.git artifacts"
     }
-     
-
+    
 }
