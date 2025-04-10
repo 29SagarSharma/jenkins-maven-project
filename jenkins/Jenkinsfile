@@ -1,5 +1,6 @@
 node{
     def mvnHome = tool 'jenkins-maven'
+    
    
     stage('Checkout'){
         checkout scmGit(branches: [[name: '**']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/29SagarSharma/jenkins-maven-project.git']])
@@ -30,6 +31,6 @@ node{
     }
 
     stage('Clean workspace'){
-        sh 'rm -rf /var/lib/jenkins/workspace/scripted-maven-pipeline'
+        sh 'rm -rf /var/lib/jenkins/workspace/scripted-maven-pipeline/*'
     }
 }
