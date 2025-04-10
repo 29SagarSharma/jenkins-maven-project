@@ -1,12 +1,8 @@
 node{
     def mvnHome = tool 'jenkins-maven'
-    env.JAVA_HOME = tool name: 'java-17', type: 'hudson.model.JDK'
-    env.PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+   
 
-    stage('Debug Java Version') {
-        sh 'java -version'
-        sh 'echo $JAVA_HOME'
-    }
+   
     stage('Checkout'){
         checkout scmGit(branches: [[name: '**']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/29SagarSharma/jenkins-maven-project.git']])
     }
