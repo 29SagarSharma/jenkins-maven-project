@@ -31,6 +31,7 @@ node{
         sh "cp target/my-app-1.0-SNAPSHOT.jar ."
         sh "git add my-app-1.0-SNAPSHOT.jar"
         sh "git commit -m 'Add .jar file'"
+        sh "git pull"
         sh "git push https://$GIT_USER:$GIT_PASS@github.com/29SagarSharma/Archive-Repo.git artifacts"
     }
     
