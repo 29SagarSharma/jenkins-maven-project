@@ -23,7 +23,7 @@ node{
 )      
         sh "git config --global user.name '$GIT_USER'"
         sh "git config --global user.email '$GIT_EMAIL' "
-        sh "git branch -M main
+        sh "git branch -M main"
         sh "cp target/my-app-1.0-SNAPSHOT.jar ."
         sh "git add my-app-1.0-SNAPSHOT.jar"
         sh "git commit -m 'Add .jar file'"
